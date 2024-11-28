@@ -10,7 +10,7 @@ contract FEYToken is ERC20, ERC20Permit, Ownable {
     constructor(
         uint256 initialSupply
     ) public ERC20("Feyorra", "FEY") ERC20Permit("Feyorra") {
-        _mint(msg.sender, initialSupply);
+        _mint(_msgSender(), initialSupply);
     }
 
     function burn(uint256 value) public onlyOwner {
