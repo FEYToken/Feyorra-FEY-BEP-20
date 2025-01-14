@@ -12,10 +12,10 @@ contract FEYToken is ERC20, ERC20Permit, Ownable {
     ) ERC20("Feyorra", "FEY") ERC20Permit("Feyorra") Ownable(_bridge) {}
 
     function burn(uint256 _amount) external onlyOwner {
-        _burn(_msgSender(), _amount);
+        _burn(msg.sender, _amount);
     }
 
     function mint(uint256 _amount) external onlyOwner {
-        _mint(_msgSender(), _amount);
+        _mint(msg.sender, _amount);
     }
 }
